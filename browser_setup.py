@@ -83,10 +83,10 @@ def launch_as_different_user(user):
   bot.keyDown('enter')
   time.sleep(0.5)
   bot.keyUp('enter')
-  time.sleep(1)
+  time.sleep(2)
 
   full_screen()
-  time.sleep(0.5)
+  time.sleep(2)
 
 
 def turn_off_auto_contribute():
@@ -150,7 +150,7 @@ def browser_setup(start, stop):
 
 
 time.sleep(3)
-master_start = 705
+master_start = 1
 master_stop = 1001
 browser_setup(master_start, master_stop)
 

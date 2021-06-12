@@ -186,6 +186,16 @@ def verify_you_are_human():
   
   verify_you_are_human()
 
+
+def click_start_using_rewards():
+  hc.move((1741, 539),random(0.05, 0.1))
+  hc.click()
+
+
+def click_claim_rewards():
+  hc.move((1744, 554),random(0.05, 0.1))
+  hc.click()
+
 def kill_file_explorer():
   # change UAC settings -- https://superuser.com/questions/1435771/windows-10-how-do-i-always-allow-an-app-to-make-changes
   import win32com.shell.shell as shell
@@ -207,13 +217,17 @@ def mine(start, stop, number_refreshes=15):
       print("user", i)
       launch_as_different_user('user' + str(i))
       time.sleep(1)
+      
       close_default_browser()
-  
-      fresh_tab()
-      # verify_you_are_human()
 
-      hc.move((1744, 554),random(0.05, 0.1))
-      hc.click()
+      verify_you_are_human()
+
+      fresh_tab()
+
+      click_start_using_rewards()
+      click_claim_rewards()
+
+
 
       for j in range(number_refreshes):
         move_to_random_spot(pixel_range_x = refresh_range_x, pixel_range_y = refresh_range_y, start_time = 0.01, stop_time = 0.1)

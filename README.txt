@@ -10,7 +10,8 @@ pip install pywin32
 
 
  git add .
- git commit 
+ git commit -m  ""
+ git push -u origin main   
 
 
 
