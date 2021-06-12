@@ -4,7 +4,6 @@ import random as random_number
 import math
 from pyclick import HumanClicker
 import win32clipboard     # pip install pywin32
-import pandas as pd
 import csv
 import win32com.shell.shell as shell
 
@@ -47,9 +46,9 @@ def full_screen():
 
 
 def launch_as_different_user(user):
-  time.sleep(.11)     # add moretime here to close all apps
+  time.sleep(.5)     # add moretime here to close all apps
   brave_app = (33, 31)
-  run_as_different_user = (116, 151)
+  run_as_different_user = (116, 151)   # (122, 132)
   password = '0223'
 
   bot.keyDown('shift')
@@ -66,12 +65,12 @@ def launch_as_different_user(user):
   bot.write(password)
   time.sleep(0.5)
   bot.keyDown('enter')
-  time.sleep(0.5)
+  time.sleep(0.1)
   bot.keyUp('enter')
-  time.sleep(.1)
+  time.sleep(2)
 
   full_screen()
-  # time.sleep(0.5)
+  time.sleep(2)
 
 def hotkey(key_arr, time_lower_bound = 0.1, time_upper_bound = 0.11):
   time.sleep(random(time_lower_bound, time_upper_bound))
@@ -207,12 +206,14 @@ def mine(start, stop, number_refreshes=15):
 
       print("user", i)
       launch_as_different_user('user' + str(i))
-      time.sleep(.4)
+      time.sleep(1)
       close_default_browser()
-
-
+  
       fresh_tab()
       # verify_you_are_human()
+
+      hc.move((1744, 554),random(0.05, 0.1))
+      hc.click()
 
       for j in range(number_refreshes):
         move_to_random_spot(pixel_range_x = refresh_range_x, pixel_range_y = refresh_range_y, start_time = 0.01, stop_time = 0.1)
@@ -230,11 +231,10 @@ bot.FAILSAFE_POINTS = [(0, 1079)]
 hc.FAILSAFE_POINTS = [(0, 1079)]
 
 start = 1
-
-stop = 1000
+stop = 400
 
 number_refreshes = 20
-
+time.sleep(2)
 mine(start, stop, number_refreshes) 
 
 

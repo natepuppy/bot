@@ -1,5 +1,24 @@
-#  (Shift, Alt, Ctrl)
+pip install -r requirements.txt
+python create_users.py
+python browser_setup.py
+python mine.py
 
+
+pip install pyautogui
+pip install pyclick
+pip install pywin32
+
+
+ git add .
+ git commit 
+
+
+
+
+
+
+
+#  (Shift, Alt, Ctrl)
 
 # YouTube Video: https://www.youtube.com/watch?v=dUeCoUw9OoQ
 # https://datatofish.com/add-python-to-windows-path/
@@ -9,9 +28,23 @@
 
 
 
+
+
+TODO 
+ - use rewards isn't alwats clicked
+ - check that you are vefified as human
+ - claim rewards
+
+
+
+
+
+
+
+
+
+
  
-
-
 Other Ideas
   # clear RAM
   # change IP
@@ -22,16 +55,4 @@ Other Ideas
   # don't share data with apps that i have dowbloaded
   # def delete_user():
 
-  
-'''
-open browser as a user
-full screen
-click skip tour
-click start using rewards
-exit the set as default
-setup monthly contributions/ auto contribute
-set cora as the place to donate
-mine
-track in csv
-verify i am a human
-'''
+
