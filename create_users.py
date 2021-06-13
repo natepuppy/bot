@@ -15,9 +15,9 @@ def create_range(start, stop):
         if i != stop - 1:
             conglomerate_of_cmd += cmd_part_3
 
-    # print(conglomerate_of_cmd)
+    print(conglomerate_of_cmd)
 
-    # shell.ShellExecuteEx(lpVerb='runas', lpFile='cmd.exe', lpParameters='/c '+conglomerate_of_cmd)
+    shell.ShellExecuteEx(lpVerb='runas', lpFile='cmd.exe', lpParameters='/c '+conglomerate_of_cmd)
 
 
 def run_in_segments(start, stop):
