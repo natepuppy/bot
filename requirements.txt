@@ -1,0 +1,3 @@
+pywin32==300
+PyAutoGUI==0.9.52
+pyclick==0.0.2
