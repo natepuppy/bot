@@ -38,6 +38,6 @@ def create_one(user_number):
 
 start = 1
 stop = 501
-run_in_segments(start, stop)
+# run_in_segments(start, stop)
 
-# create_one(500)
+create_one(500)

@@ -114,13 +114,7 @@ def browser_setup(start, stop):
   start_using_rewards_4 = (1740, 539)
   start_using_rewards_5 = (1741, 538)
 
-  # has_entered_loop = false
-
-
   for i in range(start, stop):
-    print('user', i)
-
-
     launch_as_different_user('user' + str(i))
 
     time.sleep(0.5)
@@ -154,7 +148,7 @@ def browser_setup(start, stop):
 
 
 time.sleep(3)
-master_start = 1
+master_start = 133
 master_stop = 500
 browser_setup(master_start, master_stop)
 

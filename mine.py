@@ -48,7 +48,7 @@ def full_screen():
 def launch_as_different_user(user):
   time.sleep(.5)     # add moretime here to close all apps
   brave_app = (33, 31)
-  run_as_different_user = (116, 151)   # (122, 132)    # not admin ==  116, 151
+  run_as_different_user = (122, 132)  # (122, 132)    # not admin ==  116, 151
   password = '0223'
 
   bot.keyDown('shift')
@@ -203,57 +203,60 @@ def kill_file_explorer():
   shell.ShellExecuteEx(lpVerb='runas', lpFile='cmd.exe', lpParameters='/c '+kill)
 
 
-def mine(start, stop, number_refreshes=15):
+def mine(start, stop, number_refreshes=15, alternate_start=1):
   cmd = 'taskkill /IM "explorer.exe" /F' 
   refresh_range_x = (72,97)
   refresh_range_y = (35,58)
 
-  skip = 20
-
   while(True):
+    start = alternate_start
+    alternate_start = 1
+    if start == 0 or start >= stop:
+      start = 1
     for i in range(start, stop):
 
-      print(i)
+      if i % 50 == 0:
+        kill_file_explorer()
 
-      # if i % 50 == 0:
-      #   kill_file_explorer()
-
-      # print("user", i)
-      # launch_as_different_user('user' + str(i))
-      # time.sleep(1)
+      print("user", i)
+      launch_as_different_user('user' + str(i))
+      time.sleep(1)
       
-      # close_default_browser()
+      close_default_browser()
 
-      # verify_you_are_human()
+      verify_you_are_human()
 
-      # fresh_tab()
+      fresh_tab()
 
-      # click_start_using_rewards()
-      # click_claim_rewards()
+      click_start_using_rewards()
+      click_claim_rewards()
 
 
 
-      # for j in range(number_refreshes):
-      #   move_to_random_spot(pixel_range_x = refresh_range_x, pixel_range_y = refresh_range_y, start_time = 0.01, stop_time = 0.1)
-      #   hc.click()
+      for j in range(number_refreshes):
+        move_to_random_spot(pixel_range_x = refresh_range_x, pixel_range_y = refresh_range_y, start_time = 0.01, stop_time = 0.1)
+        hc.click()
 
-      #   move_to_random_spot(start_time = 0.01, stop_time = 0.1)
+        move_to_random_spot(start_time = 0.01, stop_time = 0.1)
             
-      # close_window()
+      close_window()
 
-    # append_csv(to_float_list(amount_of_bat))
+    append_csv(to_float_list(amount_of_bat))
   time.sleep(2)
 
 
 bot.FAILSAFE_POINTS = [(0, 1079)]
 hc.FAILSAFE_POINTS = [(0, 1079)]
 
-start = 1
-stop = 400
 
+alternate_start = 0
+start = 1
+stop = 500
 number_refreshes = 20
+
+
 time.sleep(2)
-mine(start, stop, number_refreshes) 
+mine(start, stop, number_refreshes, alternate_start) 
 
 
 # def runas():
