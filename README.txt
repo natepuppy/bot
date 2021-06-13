@@ -7,11 +7,11 @@ python mine.py
 pip install pyautogui --user
 pip install pyclick --user
 pip install pywin32 --user
-
+pip install opencv-python
 
  git add .
  git commit -m  ""
- git push -u origin main   
+ git push -u origin master   
 
 
 
