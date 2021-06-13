@@ -4,14 +4,17 @@ python browser_setup.py
 python mine.py
 
 
-pip install pyautogui
-pip install pyclick
-pip install pywin32
+pip install pyautogui --user
+pip install pyclick --user
+pip install pywin32 --user
 
 
  git add .
  git commit -m  ""
  git push -u origin main   
+
+
+
 
 
 
